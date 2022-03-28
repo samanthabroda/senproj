@@ -6,7 +6,8 @@ import {
 import {
     getAuth,
     signInWithEmailAndPassword,
-    signOut
+    signOut,
+    sendPasswordResetEmail
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -28,6 +29,23 @@ const firebaseConfig = {
 
   //init auth services
   const auth = getAuth();
+
+  const resetForm = document.querySelector('#pssre')
+  if(resetForm){
+    resetForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = resetForm.em.value;
+
+        sendPasswordResetEmail(auth, email)
+            .then((cred) => {
+                location.href = "login.html";
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
+    });
+    }
 
   const logoutButton = document.querySelector('.logout')
    if(logoutButton){
