@@ -6,7 +6,7 @@ body {
 	font-size: 13px;
 	color: #2bcf47;
 	background: #EEEFE4;
-	background-image:url(/img/bootstrapimgs/background1.png);
+	background-image:url(/senproj/img/bootstrapimgs/background1.png);
 	background-repeat:repeat;
 }
 *
@@ -53,7 +53,7 @@ width:400px;
 
 #mainpic
 {
-background-image:url(/img/bootstrapimgs/background1.png);
+background-image:url(/senproj/img/bootstrapimgs/background1.png);
 background-repeat:no-repeat;
 width:900px;
 height:354px;	
@@ -95,7 +95,7 @@ padding-bottom:5px;
 
 #content_top
 {
-	background-image:url(/img/bootstrapimgs/background1.png);
+	background-image:url(/senproj/img/bootstrapimgs/background1.png);
 	background-repeat:no-repeat;
 	width:689px;
 	height:25px;
@@ -103,7 +103,7 @@ padding-bottom:5px;
 
 #content_main
 {
-background-image:url(/img/bootstrapimgs/main_back.png);
+background-image:url(/senproj/img/bootstrapimgs/main_back.png);
 background-repeat:repeat-y;
 width:659px;
 padding-left:15px;
@@ -112,7 +112,7 @@ padding-right:15px;
 
 #content_bottom
 {
-background-image:url(/img/bootstrapimgs/main_bottom.png);
+background-image:url(/senproj/img/bootstrapimgs/main_bottom.png);
 background-repeat:no-repeat;
 width:689px;
 height:25px;
