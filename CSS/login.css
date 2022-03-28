@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+html {
+    background-image: url(/img/logback.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    min-height: 100%;
+    text-align: center;
+}
+
+div {
+    background-color: green;
+    margin: auto;
+    width: 40%;
+    padding: 10px 10px 100px 10px;
+}
+
+div > form {
+    width: 100%;
+}
+
+div > form > [name=em]{
+    width: 70%;
+    margin: 12% auto 2% auto;
+    height: 50px;
+}
+
+div > form > [name=pas]{
+    width: 70%;
+    margin: 4% auto 2% auto;
+    height: 50px;
+}
+
+div > form > button.ll {
+    margin: 7% auto 2% auto;
+}
+
+h3 {
+    margin: 8% auto 2% auto;
+}
+

@@ -1,0 +1,96 @@
+<html>    
+    <head>    
+        <title>Student Registration Form</title>    
+    </head>    
+    <body>   
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyAA0U7M6DNc2jzM4pIfKcGCHL121D9LCw4",
+              authDomain: "senior-project-db331.firebaseapp.com",
+              databaseURL: "https://senior-project-db331-default-rtdb.firebaseio.com",
+              projectId: "senior-project-db331",
+              storageBucket: "senior-project-db331.appspot.com",
+              messagingSenderId: "848266800081",
+              appId: "1:848266800081:web:3667d109cfdc973c254ef0",
+              measurementId: "G-TD3SP8NLVS"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script> 
+        <link href = "registration.css" type = "text/css" rel = "stylesheet" />    
+        <h1>Student Registration Form</h1>    
+        <form name = "form1" action="modified.php" method = "post" enctype = "multipart/form-data" >    
+            <div class = "container">    
+                <div class = "form_group">    
+                    <label>First Name:</label>    
+                    <input type = "text" name = "fname" value = "" required/>    
+                </div>       
+                <div class = "form_group">    
+                    <br><label>Last Name:</label>    
+                    <input type = "text" name = "lname" value = "" required/>    
+                </div>  
+                <div class = "form_group">    
+                    <br><label for="dateofbirth">Date Of Birth:</label>
+                    <input type="date" id="dateofbirth" name="dateofbirth">    
+                </div>  
+                <div class = "form_group">
+                    <br><label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label class="tab" for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label class="tab" for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label class="tab" for="other">Other</label>
+                </div>
+                <div class = "form_group">    
+                    <br><label>Year:</label><br>
+                    <input type="radio" id="freshman" name="year" value="freshman">
+                    <label class="tab" for="freshman">Freshman</label><br>
+                    <input type="radio" id="sophomore" name="year" value="sophomore">
+                    <label class="tab" for="sophomore">Sophomore</label><br>
+                    <input type="radio" id="junior" name="year" value="junior">
+                    <label class="tab" for="junior">Junior</label><br>
+                    <input type="radio" id="senior" name="year" value="senior">
+                    <label class="tab" for="senior">Senior</label>
+                </div>  
+                <div class = "form_group">    
+                    <br><label>Email:</label>    
+                    <input type = "email" name = "email" value = "" required/>    
+                </div>   
+                <div class = "form_group">    
+                    <br><label>Phone Number:</label>    
+                    <input type = "text" name = "number" value = "" required/>    
+                </div>  
+                <div class = "form_group">    
+                    <br><label>Address:</label>    
+                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>    
+                </div>  
+                <div class = "form_group">    
+                    <br><label>Username:</label>    
+                    <input type = "text" name = "user" value = "" required/>    
+                </div> 
+                <div class = "form_group">    
+                    <br><label>Password:</label>    
+                    <input type = "password" name = "pwd" value = "" required/><br><br>    
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div>    
+            </div>    
+        </form>   
+        
+        var ref = firebase.database().ref();                           ref.on("value", function(snapshot){
+            output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
+        });
+    </body>    
+</html>    
