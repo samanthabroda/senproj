@@ -6,7 +6,7 @@ body {
 	font-size: 13px;
 	color: #2bcf47;
 	background: #EEEFE4;
-	background-image:url(/senproj/img/bootstrapimgs/background1.png);
+	background-image:url(../img/bootstrapimgs/background1.png);
 	background-repeat:repeat;
 }
 *
