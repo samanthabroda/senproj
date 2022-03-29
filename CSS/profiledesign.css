@@ -37,3 +37,49 @@ body {
     padding: 5px 10px;
     color: #000;
 }
+
+#menu
+{
+display:block;
+float:left;
+clear:both;
+width:960px;
+height:54px;
+float:left;
+clear:both;
+}
+
+#menu ul {
+	list-style: none;
+	padding: 0px;
+	margin-left:auto;
+	width:960px;
+}
+
+#menu li {
+	list-style: none;
+	padding: 0px;	
+	display: inline; 
+	
+}
+
+#menu a {
+	float: left;
+	height: 36px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 18px;
+	font-size: 15px;
+	padding-left:13px;
+	padding-right:13px;
+	
+}
+
+#menu a:hover{
+	color:#86AEF9;
+	background-image:url(/img/bootstrapimgs/linkbackground.jpg);
+	background-repeat:repeat-x;
+}
