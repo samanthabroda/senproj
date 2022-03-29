@@ -7,7 +7,8 @@ import {
     getAuth,
     signInWithEmailAndPassword,
     signOut,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    createUserWithEmailAndPassword
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -30,9 +31,39 @@ const firebaseConfig = {
   //init auth services
   const auth = getAuth();
 
+  const addStudents = document.querySelector('.add')
+    if(addStudents){
+    addStudents.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        const email = addStudents.Email.value;
+        var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var passwordLength = 12;
+        var p = "";
+        for (var i = 0; i <= passwordLength; i++) {
+            var randomNumber = Math.floor(Math.random() * chars.length);
+            p += chars.substring(randomNumber, randomNumber +1);
+        }
+        const password = p;
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                sendPasswordResetEmail(auth, email)
+                    .then((cred) => {
+                        location.href = "login.html";
+                    })
+                    .catch((err) => {
+                        console.log(err.message)
+                    })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    })
+}
+
   
     const resetForm = document.querySelector('#pssre')
-
 
   if(resetForm){
     resetForm.addEventListener('submit', (e) => {
@@ -122,10 +153,9 @@ getDocs(colRef)
     // })
 
     //adding documents
-    const addStudents = document.querySelector('.add')
+    if(addStudents){
     addStudents.addEventListener('submit', (e) => {
         e.preventDefault()
-
 
         // <label for="FirstName">First Name:</label>
         // <input type="text" name="FirstName" required>
@@ -143,10 +173,15 @@ getDocs(colRef)
         .then(() => {
             addStudents.reset()
         })
+        .catch(err => {
+            console.log(err.message)
+        })
     })
+}
 
     //deleting document
     const deleteStudentForm = document.querySelector('.delete')
+    if(deleteStudentForm){
     deleteStudentForm.addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -156,6 +191,7 @@ getDocs(colRef)
                 deleteStudentForm.reset()
             })
     })
+}
 
     //get a single document
     const docRef = doc(db, 'Students', )
