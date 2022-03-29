@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #24252a;
+    background-color: #cbcbce;
   }
   
   .logo {
@@ -20,7 +20,7 @@
   .overlay__content a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    color: #edf0f1;
+    color: #1b1c1c;
     text-decoration: none;
   }
   
@@ -50,7 +50,7 @@
     transition: background-color 0.3s ease 0s;
   }
   
-  .cta:hover {
+  .logout:hover {
     background-color: rgba(0, 136, 169, 0.8);
   }
   
