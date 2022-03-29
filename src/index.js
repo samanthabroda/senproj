@@ -74,7 +74,21 @@ const firebaseConfig = {
                 const uid = cred.user.uid;
             })
             .catch((err) => {
-                console.log(err.message)
+                if (err.code === 'auth/user-not-found') {
+                    document.getElementById("error1").innerHTML = "Your email is not associated with an account."
+                } 
+                else if (err.code === 'auth/too-many-requests') { 
+                    document.getElementById("error1").innerHTML = "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
+                } 
+                else if (err.code === 'auth/invalid-email') { 
+                    document.getElementById("error1").innerHTML = "You must enter a valid email."
+                }
+                else if (err.code === 'auth/invalid-password') { 
+                    document.getElementById("error1").innerHTML = "Your password is incorrect."
+                }
+                else { 
+                    document.getElementById("error1").innerHTML = "An error has occurred, please try again."
+                }
             })
     });
     }
