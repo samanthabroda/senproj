@@ -49,7 +49,6 @@ const firebaseConfig = {
             .then(() => {
                 sendPasswordResetEmail(auth, email)
                     .then((cred) => {
-                        location.href = "login.html";
                     })
                     .catch((err) => {
                         console.log(err.message)
