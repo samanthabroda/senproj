@@ -6,17 +6,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=deivce-width, initial-scale=1.0">
         <title>TRIO Database Table</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../CSS/NavigationBar.css">
     </head>
 
     <body>
-        <div id="menu">
-        	<ul>
-            	<li class="menuitem"><a href="HomePage.html">Home</a></li>
-                <li class="menuitem"><a href="FAQPage.html">FAQ</a></li>
-                <li class="menuitem"><a href="index.html">Add or Delete Users</a></li>
-                <li class="menuitem"><a href="../html/AccountCreation.html">Account Creation</a></li>
-            </ul>
+        <header>
+            <a class="logo" href="/"><img width="100" height="100" src="../img/Trio_Logo.svg" alt="logo"></a>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="../html/HomePage.html">Home</a></li>
+                    <li><a href="../html/index.html">Add or Delete Users</a></li>
+                    <li><a href="../html/FAQPage.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <button class="logout">logout</button>
+            <p class="menu cta">Menu</p>
+        </header>
+        <div class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+                <a href="../html/HomePage.html">Home</a>
+                <a href="../html/index.html">Add or Delete Users</a>
+                <a href="../html/FAQPage.html">FAQ</a>
+            </div>
         </div>
         
         <div class="container mt-3">
