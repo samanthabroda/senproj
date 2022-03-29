@@ -30,7 +30,10 @@ const firebaseConfig = {
   //init auth services
   const auth = getAuth();
 
-  const resetForm = document.querySelector('#pssre')
+  
+    const resetForm = document.querySelector('#pssre')
+
+
   if(resetForm){
     resetForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -89,4 +92,72 @@ const firebaseConfig = {
             })
     });
     }
+
+    //Work for the Database
+  //collection red
+  const colRef = collection(db, 'Students')
+
+  //queries
+  const q = query(colRef, where("LastName", "==", "Malik"), orderBy('FirstName', 'asc'))
+
+getDocs(colRef)
+.then((snapshot) => {
+    let Students = []
+    snapshot.docs.forEach((doc) => {
+        Students.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(Students)
+})
+.catch(err => {
+    console.log(err.message)
+})
+
+    // //realtime  collection data
+    // onSnapshot(q, (snapshot) => {
+    //     let Students = []
+    //     snapshot.docs.forEach((doc) => {
+    //         Students.push({ ...doc.data(), id: doc.id})
+    //     })
+    //     console.log(Students)
+    // })
+
+    //adding documents
+    const addStudents = document.querySelector('.add')
+    addStudents.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+
+        // <label for="FirstName">First Name:</label>
+        // <input type="text" name="FirstName" required>
+        addDoc(colRef, {
+            FirstName: addStudents.FirstName.value, 
+            LastName: addStudents.LastName.value,
+            Email: addStudents.Email.value,
+            PhoneNumber: addStudents.PhoneNumber.value,
+            Gender: addStudents.Gender.value,
+            Standing: addStudents.Standing.value,
+
+            // <label for="PhoneNumber">Phone Number</label>
+            // <input type="number" name="PhoneNumber">
+        })
+        .then(() => {
+            addStudents.reset()
+        })
+    })
+
+    //deleting document
+    const deleteStudentForm = document.querySelector('.delete')
+    deleteStudentForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        const docRef = doc(db, 'Students', deleteStudentForm.id.value)
+        deleteDoc(docRef)
+            .then(() => {
+                deleteStudentForm.reset()
+            })
+    })
+
+    //get a single document
+    const docRef = doc(db, 'Students', )
+
 
