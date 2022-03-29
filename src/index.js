@@ -86,9 +86,6 @@ const firebaseConfig = {
                 else if (err.code === 'auth/invalid-password') { 
                     document.getElementById("error1").innerHTML = "Your password is incorrect."
                 }
-                else { 
-                    document.getElementById("error1").innerHTML = "An error has occurred, please try again."
-                }
             })
     });
     }
