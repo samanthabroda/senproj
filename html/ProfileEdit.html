@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Allowing Users to Edit Multiple Text field and save the contents</title>
+<script type="text/javascript">
+function saveEdits() {
+
+//get the editable element
+var editElem1 = document.getElementById("edit1");
+var editElem2 = document.getElementById("edit2");
+var editElem3 = document.getElementById("edit3");
+var editElem4 = document.getElementById("edit4");
+
+//get the edited element content
+var userVersion1 = editElem1.innerHTML;
+var userVersion2 = editElem2.innerHTML;
+var userVersion3 = editElem3.innerHTML;
+var userVersion4 = editElem4.innerHTML;
+
+//save the content to local storage
+localStorage.userEdits1 = userVersion1;
+localStorage.userEdits2 = userVersion2;
+localStorage.userEdits3 = userVersion3;
+localStorage.userEdits4 = userVersion4;
+
+//write a confirmation to the user
+document.getElementById("update").innerHTML="Edits saved!";
+
+}
+function checkEdits() {
+
+//find out if the user has previously saved edits
+if(localStorage.userEdits1!=null)
+    document.getElementById("edit1").innerHTML=localStorage.userEdits1;
+
+if(localStorage.userEdits2!=null)
+    document.getElementById("edit2").innerHTML=localStorage.userEdits2;
+
+if(localStorage.userEdits3!=null)
+    document.getElementById("edit3").innerHTML=localStorage.userEdits3;
+
+
+if(localStorage.userEdits4!=null)
+    document.getElementById("edit4").innerHTML=localStorage.userEdits4;
+}
+
+</script>
+</head>
+<body onload="checkEdits()">
+
+<div id="edit1" contenteditable="true">
+Simrah Malik
+</div>
+<div id="edit2" contenteditable="true">
+123456789
+</div>
+<div id="edit3" contenteditable="true">
+Female
+</div>
+<div id="edit4" contenteditable="true">
+Junior
+</div>
+<input type="button" value="save my edits" onclick="saveEdits()"/>
+
+<div id="update"> Edit the text and click to save for next time</div>
+
+</body>
+</html>

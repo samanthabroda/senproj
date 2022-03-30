@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/NavigationBar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/index.css">
     <title>Senior Project</title>
 </head>
 
 <body>
     <header>
-		<a class="logo" href="/"><img width="100" height="100" src="../img/Trio_Logo.svg" alt="logo"></a>
+		<a class="logo" ><img width="100" height="100" src="../img/Trio_Logo.svg" alt="logo"></a>
 		<nav>
 			<ul class="nav__links">
+				<li><a href="../html/HomePage.html">HomePage</a></li>
 				<li><a href="../html/FAQPage.html">FAQ</a></li>
-				<li><a href="../html/HomePage.html">Home Page</a></li>
+				<li><a href="../html/index.html">Add or Delete Users</a></li>
 				<li><a href="../html/FirebaseTable.html">See All Users</a></li>
 			</ul>
 		</nav>
@@ -24,51 +26,55 @@
 	<div class="overlay">
 		<a class="close">&times;</a>
 		<div class="overlay__content">
+			<a href="../html/HomePage.html">HomePage</a>
 			<a href="../html/FAQPage.html">FAQPage</a>
-			<a href="../html/HomePage.html">Home Page</a>
+			<a href="../html/index.html">Add or Delete Users</a>
 			<a href="../html/FirebaseTable.html">See All Users</a>
 		</div>
 	</div>
     <h1>Welcome to Senior Project</h1>
     <div id="container">
-		<div id="header">
-        	<h1>Tr<span class="off">io</span></h1>
-        </div>   
+		
         
 </div>
 
+<div class="allForms">
+
     <form class="add">
-        <label for="FirstName">First Name:</label>
+        <label id="formLabel" for="FirstName">First Name:</label>
         <input type="text" name="FirstName" required><br>
 
-        <label for="LastName">Last Name:</label>
+        <label id="formLabel" for="LastName">Last Name:</label>
         <input type="text" name="LastName" required><br>
 
-        <label for="Email">Email:</label>
+        <label id="formLabel" for="Email">Email:</label>
         <input type="text" name="Email" required><br>
 
-        <label for="PhoneNumber">Phone Number</label>
+        <label id="formLabel" for="PhoneNumber">Phone Number</label>
         <input type="text" name="PhoneNumber" required><br>
 
-        <label for="Gender">Gender </label>
-        <input type="radio" name="Gender" value="Male" required> Male<br>
-        <input type="radio" name="Gender" value="Female" required> Female<br>
+        <label id="formLabel" for="Gender">Gender </label>
+        <input type="radio" name="Gender" value="Male" required> Male</label><br>
+        <input type="radio" name="Gender" value="Female" required> Female</label><br>
 
-        <label for="Standing">Standing</label>
-        <input type="radio" name="Standing" value="Freshman" required> Freshman<br>
-        <input type="radio" name="Standing" value="Sophomore" required> Sophomore<br>
-        <input type="radio" name="Standing" value="Junior" required> Junior<br>
-        <input type="radio" name="Standing" value="Senior" required> Senior<br>
+        <label id="formLabel" for="Standing">Standing</label>
+        <input type="radio" name="Standing" value="Freshman" required> Freshman</label><br>
+        <input type="radio" name="Standing" value="Sophomore" required> Sophomore</label><br>
+        <input type="radio" name="Standing" value="Junior" required> Junior</label><br>
+        <input type="radio" name="Standing" value="Senior" required> Senior</label><br>
 
-        <button>Add Student</button>
+        <button class="addStudent">Add Student</button>
     </form>
 
     <form class = "delete">
         <label for = "id">Document id:</label>
-        <input type="text" name="id" required>
+        <input type="text" name="id" required> <br>
 
-        <button name="submit">Delete Student</button>
+        <button class="deleteStudent">Delete Student</button>
     </form>
+
+</div>
+
     
     <script src="bundle.js"></script>
 </body> 
