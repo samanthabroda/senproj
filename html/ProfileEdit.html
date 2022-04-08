@@ -1,5 +1,7 @@
 <html>
 <head>
+<link rel="stylesheet" href="../CSS/profiledesign.css" />
+
 <title>Allowing Users to Edit Multiple Text field and save the contents</title>
 <script type="text/javascript">
 function saveEdits() {
@@ -47,18 +49,45 @@ if(localStorage.userEdits4!=null)
 </head>
 <body onload="checkEdits()">
 
+
+    <header>
+		<a class="logo" ><img width="100" height="100" src="../img/Trio_Logo.svg" alt="logo"></a>
+		<nav>
+			<ul class="nav__links">
+				<li><a href="../html/HomePage.html">HomePage</a></li>
+				<li><a href="../html/FAQPage.html">FAQ</a></li>
+				<li><a href="../html/index.html">Add or Delete Users</a></li>
+				<li><a href="../html/FirebaseTable.html">See All Users</a></li>
+			</ul>
+		</nav>
+		<button class="logout">logout</button>
+	</header>
+	<div class="overlay">
+
+<div id="nameask">
+Name: 
+</div>
 <div id="edit1" contenteditable="true">
 Simrah Malik
+</div><br>
+<div id="idask">
+ID: 
 </div>
 <div id="edit2" contenteditable="true">
 123456789
+</div><br>
+<div id="nameask">
+Type: 
 </div>
 <div id="edit3" contenteditable="true">
 Female
+</div><br>
+<div id="nameask">
+Year: 
 </div>
 <div id="edit4" contenteditable="true">
 Junior
-</div>
+</div><br>
 <input type="button" value="save my edits" onclick="saveEdits()"/>
 
 <div id="update"> Edit the text and click to save for next time</div>
