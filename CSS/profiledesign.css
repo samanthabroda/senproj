@@ -78,6 +78,13 @@ clear:both;
 	
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cbcbce;
+  }
+
 #menu a:hover{
 	color:#86AEF9;
 	background-image:url(/img/bootstrapimgs/linkbackground.jpg);
