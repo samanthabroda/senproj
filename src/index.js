@@ -49,6 +49,7 @@ const firebaseConfig = {
             .then(() => {
                 sendPasswordResetEmail(auth, email)
                     .then((cred) => {
+
                     })
                     .catch((err) => {
                         console.log(err.message)
@@ -165,6 +166,7 @@ getDocs(colRef)
             PhoneNumber: addStudents.PhoneNumber.value,
             Gender: addStudents.Gender.value,
             Standing: addStudents.Standing.value,
+            Permissions: addStudents.Permissions.value,
 
             // <label for="PhoneNumber">Phone Number</label>
             // <input type="number" name="PhoneNumber">
