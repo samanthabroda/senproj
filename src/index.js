@@ -49,6 +49,7 @@ const firebaseConfig = {
             .then(() => {
                 sendPasswordResetEmail(auth, email)
                     .then((cred) => {
+
                     })
                     .catch((err) => {
                         console.log(err.message)

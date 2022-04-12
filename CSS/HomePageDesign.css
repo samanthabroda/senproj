@@ -181,3 +181,7 @@ html, body {
 text-align: center;
 }
 p {text-align: left;}
+
+.adonly {
+	display: none;
+}
