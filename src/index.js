@@ -190,7 +190,7 @@ const loginFormc = document.querySelector('#logint')
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                location.href = "TLCHomePage.html";
+                location.href = "StudentHomePage.html";
             })
             .catch((err) => {
                 if (err.code === 'auth/user-not-found') {
