@@ -86,7 +86,7 @@ const firebaseConfig = {
         logoutButton.addEventListener('click', () => {
             signOut(auth)
                 .then(() => {
-                    location.href = "login.html";
+                    location.href = "ChooseLogin.html";
                 })
                 .catch((err) => {
                     console.log(err.message)
@@ -94,7 +94,7 @@ const firebaseConfig = {
         });
    }
     
-  const loginForm = document.querySelector('.login')
+  const loginForm = document.querySelector('#logina')
   if(loginForm){
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -104,8 +104,93 @@ const firebaseConfig = {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(auth.currentUser.email);
                 location.href = "HomePage.html";
+            })
+            .catch((err) => {
+                if (err.code === 'auth/user-not-found') {
+                    document.getElementById("error1").innerHTML = "Your email is not associated with an account."
+                } 
+                else if (err.code === 'auth/too-many-requests') { 
+                    document.getElementById("error1").innerHTML = "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
+                } 
+                else if (err.code === 'auth/invalid-email') { 
+                    document.getElementById("error1").innerHTML = "You must enter a valid email."
+                }
+                else if (err.code === 'auth/invalid-password') { 
+                    document.getElementById("error1").innerHTML = "Your password is incorrect."
+                }
+            })
+    });
+    }
+
+  const loginFormb = document.querySelector('#loginc')
+  if(loginFormb){
+    loginFormb.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = loginFormb.em.value;
+        const password = loginFormb.pas.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                location.href = "CounselorHomePage.html";
+            })
+            .catch((err) => {
+                if (err.code === 'auth/user-not-found') {
+                    document.getElementById("error1").innerHTML = "Your email is not associated with an account."
+                } 
+                else if (err.code === 'auth/too-many-requests') { 
+                    document.getElementById("error1").innerHTML = "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
+                } 
+                else if (err.code === 'auth/invalid-email') { 
+                    document.getElementById("error1").innerHTML = "You must enter a valid email."
+                }
+                else if (err.code === 'auth/invalid-password') { 
+                    document.getElementById("error1").innerHTML = "Your password is incorrect."
+                }
+            })
+    });
+    }
+
+const loginFormc = document.querySelector('#logint')
+  if(loginFormc){
+    loginFormc.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = loginFormc.em.value;
+        const password = loginFormc.pas.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                location.href = "TLCHomePage.html";
+            })
+            .catch((err) => {
+                if (err.code === 'auth/user-not-found') {
+                    document.getElementById("error1").innerHTML = "Your email is not associated with an account."
+                } 
+                else if (err.code === 'auth/too-many-requests') { 
+                    document.getElementById("error1").innerHTML = "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later."
+                } 
+                else if (err.code === 'auth/invalid-email') { 
+                    document.getElementById("error1").innerHTML = "You must enter a valid email."
+                }
+                else if (err.code === 'auth/invalid-password') { 
+                    document.getElementById("error1").innerHTML = "Your password is incorrect."
+                }
+            })
+    });
+    }
+    const loginFormd = document.querySelector('#logins')
+  if(loginFormd){
+    loginFormd.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = loginFormd.em.value;
+        const password = loginFormd.pas.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                location.href = "TLCHomePage.html";
             })
             .catch((err) => {
                 if (err.code === 'auth/user-not-found') {
@@ -142,10 +227,10 @@ const firebaseConfig = {
           const q4 = query(colRef3, where("Email", "==", auth.currentUser.email));
           const q5 = query(colRef4, where("Email", "==", auth.currentUser.email));
             
-          if(q2){
-              console.log("good job");
-              document.querySelectorAll(".adonly").forEach(a=>a.style.display = "none");
-            } 
+          //if(q2){
+              //console.log("good job");
+              //document.querySelectorAll(".adonly").forEach(a=>a.style.display = "none");
+            //} 
         }
         else {
           console.log("state = definitely signed out")
