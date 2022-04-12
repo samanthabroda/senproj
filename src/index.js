@@ -8,7 +8,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     sendPasswordResetEmail,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    onAuthStateChanged
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -49,7 +50,6 @@ const firebaseConfig = {
             .then(() => {
                 sendPasswordResetEmail(auth, email)
                     .then((cred) => {
-
                     })
                     .catch((err) => {
                         console.log(err.message)
@@ -81,7 +81,7 @@ const firebaseConfig = {
     });
     }
 
-  const logoutButton = document.querySelector('.logout')
+  const logoutButton = document.querySelector('#logout')
    if(logoutButton){
         logoutButton.addEventListener('click', () => {
             signOut(auth)
@@ -92,7 +92,7 @@ const firebaseConfig = {
                     console.log(err.message)
                 })
         });
-    }
+   }
     
   const loginForm = document.querySelector('.login')
   if(loginForm){
@@ -103,9 +103,8 @@ const firebaseConfig = {
         const password = loginForm.pas.value;
 
         signInWithEmailAndPassword(auth, email, password)
-            .then((cred) => {
+            .then((userCredential) => {
                 location.href = "HomePage.html";
-                const uid = cred.user.uid;
             })
             .catch((err) => {
                 if (err.code === 'auth/user-not-found') {
@@ -125,12 +124,35 @@ const firebaseConfig = {
     }
 
     //Work for the Database
-  //collection red
-  const colRef = collection(db, 'Students')
+    //collection red
+    const colRef = collection(db, 'Students')
+    const colRef2 = collection(db, 'TRIOLeadershipCouncil')
+    const colRef3 = collection(db, 'Counselors')
+    const colRef4 = collection(db, 'Administrators')
 
-  //queries
-  const q = query(colRef, where("LastName", "==", "Malik"), orderBy('FirstName', 'asc'))
+    //queries
+    const q = query(colRef, where("LastName", "==", "Malik"), orderBy('FirstName', 'asc'))
+ 
 
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const q2 = query(colRef, where("Email", "==", auth.currentUser.email));
+          const q3 = query(colRef2, where("Email", "==", auth.currentUser.email));
+          const q4 = query(colRef3, where("Email", "==", auth.currentUser.email));
+          const q5 = query(colRef4, where("Email", "==", auth.currentUser.email));
+            
+          if(q2){
+              console.log("good job");
+              document.querySelectorAll(".adonly").forEach(a=>a.style.display = "none");
+            } 
+        }
+        else {
+          console.log("state = definitely signed out")
+        }
+      })
+
+      
+  
 getDocs(colRef)
 .then((snapshot) => {
     let Students = []
@@ -193,7 +215,28 @@ getDocs(colRef)
     })
 }
 
-    //get a single document
-    const docRef = doc(db, 'Students', )
+const dropCheck = document.querySelector('.dropbtn')
+if(dropCheck){
+    dropCheck.addEventListener('click', () => {
+         document.getElementById("myDropdown").classList.toggle("show");
+    });
+}
+
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  
 
 

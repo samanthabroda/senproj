@@ -1,11 +1,25 @@
 <link rel="stylesheet" href="../CSS/profiledesign.css" />
+<link rel="stylesheet" type="text/css" href="../CSS/NavigationBar.css">
 
-<div id="menu">
-  <ul>
-        <li class="menuitem"><a href="../html/HomePage.html">Home Page</a></li>
-        <li class="menuitem"><a href="../html/ProfileEdit.html">Edit Profile</a></li>
+<header>
+  <a class="logo" ><img width="100" height="100" src="../img/Trio_Logo.svg" alt="logo"></a>
+  <nav>
+    <ul class="nav__links">
+      <li><a href="../html/HomePage.html">HomePage</a></li>
+      <li><a href="../html/FAQPage.html">FAQ</a></li>
     </ul>
-</div>
+  </nav>
+  <div class="dropdown">
+    <button class="dropbtn">My Account</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="../html/Profile.html">My Profile</a>
+      <a href="../html/index.html">Manage Users</a>
+      <a href="../html/FirebaseTable.html">View Users</a>
+      <button id="logout">logout</button>
+    </div>
+    </div>
+  <p class="menu cta">Menu</p>
+</header>
 
 <div class="student-profile py-4">
     <div class="container">
@@ -73,3 +87,4 @@
       </div>
     </div>
   </div>
+  <script src="bundle.js"></script>
