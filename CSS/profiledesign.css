@@ -90,3 +90,45 @@ header {
 	background-image:url(/img/bootstrapimgs/linkbackground.jpg);
 	background-repeat:repeat-x;
 }
+
+.dropbtn {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+	background-color: rgb(87, 199, 227);
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	right: 0;
+	z-index: 1;
+  }
+  
+  .dropdown-content a, #logout {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  outline: none;
+  border: none;
+  }
+  
+  .dropdown a:hover, #logout:hover {background-color: #ddd;}
+  
+
