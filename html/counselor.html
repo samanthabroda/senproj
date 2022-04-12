@@ -7,22 +7,22 @@
 function saveEdits() {
 
 //get the editable element
-var editElem11 = document.getElementById("edit11");
-var editElem12 = document.getElementById("edit12");
-var editElem13 = document.getElementById("edit13");
-var editElem14 = document.getElementById("edit14");
+var editElem1 = document.getElementById("edit1");
+var editElem2 = document.getElementById("edit2");
+var editElem3 = document.getElementById("edit3");
+var editElem4 = document.getElementById("edit4");
 
 //get the edited element content
-var userVersion11 = editElem11.innerHTML;
-var userVersion12 = editElem12.innerHTML;
-var userVersion13 = editElem13.innerHTML;
-var userVersion14 = editElem14.innerHTML;
+var userVersion1 = editElem1.innerHTML;
+var userVersion2 = editElem2.innerHTML;
+var userVersion3 = editElem3.innerHTML;
+var userVersion4 = editElem4.innerHTML;
 
 //save the content to local storage
-localStorage.userEdits11 = userVersion11;
-localStorage.userEdits12 = userVersion12;
-localStorage.userEdits13 = userVersion13;
-localStorage.userEdits14 = userVersion14;
+localStorage.userEdits1 = userVersion1;
+localStorage.userEdits2 = userVersion2;
+localStorage.userEdits3 = userVersion3;
+localStorage.userEdits4 = userVersion4;
 
 //write a confirmation to the user
 document.getElementById("update").innerHTML="Edits saved!";
@@ -31,18 +31,18 @@ document.getElementById("update").innerHTML="Edits saved!";
 function checkEdits() {
 
 //find out if the user has previously saved edits
-if(localStorage.userEdits11!=null)
-    document.getElementById("edit11").innerHTML=localStorage.userEdits11;
+if(localStorage.userEdits1!=null)
+    document.getElementById("edit1").innerHTML=localStorage.userEdits1;
 
-if(localStorage.userEdits12!=null)
-    document.getElementById("edit12").innerHTML=localStorage.userEdits12;
+if(localStorage.userEdits2!=null)
+    document.getElementById("edit2").innerHTML=localStorage.userEdits2;
 
-if(localStorage.userEdits13!=null)
-    document.getElementById("edit13").innerHTML=localStorage.userEdits13;
+if(localStorage.userEdits3!=null)
+    document.getElementById("edit3").innerHTML=localStorage.userEdits3;
 
 
-if(localStorage.userEdits14!=null)
-    document.getElementById("edit14").innerHTML=localStorage.userEdits14;
+if(localStorage.userEdits4!=null)
+    document.getElementById("edit4").innerHTML=localStorage.userEdits4;
 }
 
 </script>
@@ -67,26 +67,26 @@ if(localStorage.userEdits14!=null)
 <div id="nameask">
 Name: 
 </div>
-<div id="edit11" contenteditable="true">
+<div id="edit1" contenteditable="true">
 Simrah Malik
 </div><br>
 <div id="idask">
-ID: 
+Education: 
 </div>
-<div id="edit12" contenteditable="true">
-123456789
+<div id="edit2" contenteditable="true">
+Farmingdale State College
+</div><br>
+<div id="nameask">
+Available Days: 
+</div>
+<div id="edit3" contenteditable="true">
+Monday, Wednesday, Thursday
 </div><br>
 <div id="nameask">
 Pronouns: 
 </div>
-<div id="edit13" contenteditable="true">
+<div id="edit4" contenteditable="true">
 Female
-</div><br>
-<div id="nameask">
-Year: 
-</div>
-<div id="edit14" contenteditable="true">
-Junior
 </div><br>
 <input type="button" value="save my edits" onclick="saveEdits()"/>
 
