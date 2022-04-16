@@ -30,7 +30,7 @@ const firebaseConfig = {
   const db = getFirestore();
 
   //init auth services
-  const auth = getAuth();
+  //const auth = getAuth();
 
   const addStudents = document.querySelector('.add')
     if(addStudents){
