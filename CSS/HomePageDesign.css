@@ -236,6 +236,20 @@ p {text-align: left;}
     align-items: center;
     background-color: #cbcbce;
   }
+
+  .loginchoice {
+    display: block;
+    width: 50%;
+    border: white;
+    margin: auto;
+    background-color: rgb(119, 44, 189);
+    padding: 14px 28px;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-style:normal;
+    color:rgba(255, 255, 255, 0.8)
+  }
   
   .logo {
     cursor: pointer;
